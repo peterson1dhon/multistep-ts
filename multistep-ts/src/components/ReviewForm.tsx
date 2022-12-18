@@ -10,12 +10,12 @@ type ReviewProps = {
         review: string;
         comment: string;
     };
-    updateFiledHandler: (key: string, value: string) => void;
+    updateFieldHandler: (key: string, value: string) => void;
 };
 
 import "./ReviewForm.css";
 
-const ReviewForm = ({ data, updateFilderHandler }: ReviewProps) => {
+const ReviewForm = ({ data, updateFieldHandler}: ReviewProps) => {
   return (
     <div className="review-form">
       <div className="form-control score-container">
@@ -26,7 +26,7 @@ const ReviewForm = ({ data, updateFilderHandler }: ReviewProps) => {
             name="review"
             checked={data.review === "unsatisfied"}
             required
-            onChange={(e) => updateFilderHandler("review", e.target.value)}
+            onChange={(e) => updateFieldHandler("review", e.target.value)}
           />
           <BsFillEmojiFrownFill />
           <p>Insatisfeito</p>
